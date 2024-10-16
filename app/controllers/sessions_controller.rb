@@ -1,5 +1,16 @@
 class SessionsController < ApplicationController
-    def homepage
-            render "sessions/welcome"
-    end
+
+  def new
+  end
+
+  def create
+  end
+
+  def destroy
+  end
+
+  def homepage
+          render "sessions/welcome"
+  end
+
 end
