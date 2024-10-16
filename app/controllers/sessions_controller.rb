@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    render :new
   end
 
   def home
@@ -21,7 +22,8 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to user_path(@user.id)
+      # redirect_to user_path(@user.id)
+      redirect_to user_mfa_session_path(@user.id)
 
     else
       message = "Something went wrong"
@@ -31,6 +33,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    # redirect_to root_path
   end
 end

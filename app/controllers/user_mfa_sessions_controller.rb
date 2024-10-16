@@ -4,7 +4,7 @@ class UserMfaSessionsController < ApplicationController
   end
 
   def create
-    user = User.new(username: "name", password: "test", email: "test@test.com")
+    # user = User.new(username: "name", password: "test", email: "test@test.com")
     user = current_user # grab your currently logged in user
     p user.google_qr_uri
     user.mfa_secret = params[:mfa_code]

@@ -3,8 +3,14 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   before_action :check_mfa
+
   private
   def check_mfa
+    # skip the mfa check if on login_path
+    if request.path == login_path
+      return
+    end
+
     if !(user_mfa_session = UserMfaSession.find) && (user_mfa_session ? user_mfa_session.record == current_user : !user_mfa_session)
       redirect_to new_user_mfa_session_path
     end
