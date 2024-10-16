@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
   def check_mfa
     # skip the mfa check if on login_path
-    if request.path == login_path
+    if request.path != user_mfa_session_path
       return
     end
 

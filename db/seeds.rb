@@ -10,7 +10,7 @@
 
 User.destroy_all
 
-users = User.create!([
+User.create!([
     { username: "Kamilya", password: "test1237320uge", email: "Kami@soemthing.com", MFA_secret: nil, google_secret: "nil" },
     { username: "Khari", password: "test2346773209halsjS73", email: "Khari@soemthing.com", MFA_secret: nil, google_secret: "nil" },
     { username: "Chiara", password: "testPL297278HAVD/", email: "Chiara@soemthing.com", MFA_secret: nil, google_secret: "nil" },

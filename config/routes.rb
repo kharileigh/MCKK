@@ -23,27 +23,23 @@ Rails.application.routes.draw do
   get "/register", to: "users#new" # show registration form
   post "/register", to: "users#create" # process registration submission
 
-
-
   # LOGIN ROUTES
   resources :sessions, only: [ :new, :create, :destroy ]
   get "/login", to: "sessions#new" # show login form
   post "/login", to: "sessions#create" # process login form submission
   get "/logout", to: "sessions#destroy" # handles user logout
 
-
-
   # 2FA GOOGLE
   resources :user_mfa_sessions, only: [ :new, :create ]
   get "/mfa", to: "user_mfa_sessions#new" # show 2FA input form
   post "mfa", to: "user_mfa_sessions#create" # process 2FA code
-
 
   # LOAN
   resources :loans, only: [ :new, :create ]
   get "/application", to: "loans#new" # shows loan application form
   post "/application", to: "loans#create" # processes application submission
 
+  get "/users/:id", to: "users#index"
 
   get "/user_mfa_session", to: "user_mfa_sessions#new"
   post "/user_mfa_session", to: "user_mfa_sessions#create"
