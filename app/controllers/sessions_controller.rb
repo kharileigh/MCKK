@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def destroy
   end
 
-  def homepage
+  def home
           render "sessions/welcome"
   end
 
