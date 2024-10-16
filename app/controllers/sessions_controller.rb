@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
@@ -7,4 +8,9 @@ class SessionsController < ApplicationController
 
   def destroy
   end
+
+  def homepage
+          render "sessions/welcome"
+  end
+
 end

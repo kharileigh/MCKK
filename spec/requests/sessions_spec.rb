@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Sessions", type: :request do
+
   describe "GET /new" do
     it "returns http success" do
       get "/sessions/new"
@@ -20,6 +21,10 @@ RSpec.describe "Sessions", type: :request do
       get "/sessions/destroy"
       expect(response).to have_http_status(:success)
     end
+  end
+
+  describe "GET /index" do
+    pending "add some examples (or delete) #{__FILE__}"
   end
 
 end
