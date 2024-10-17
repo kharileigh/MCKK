@@ -35,19 +35,3 @@ class UserMfaSessionsController < ApplicationController
     end
   end
 end
-
-
-
-
-
-# if @current_user
-  #   if @current_user.MFA_secret.nil?
-  #     @current_user.generate_mfa_secret! # Assuming this method generates and saves the MFA secret user.save!
-  #     @current_user.save!
-  #   end
-  #     @current_user.set_google_secret
-  #     @current_user.google_qr_uri
-  # else
-  #   redirect_to welcome_path, alert: "you need to sign in first"
-
-# end
