@@ -1,0 +1,32 @@
+<div class="row">
+    <h1>Product Application</h1>
+</div>
+<div>
+<%= form_with model: @loan, local: true, html: { multipart: true } do |form| %>
+
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name %>
+
+    <%= form.label :industry %>
+    <%= form.text_field :industry %>
+
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+
+    <%= form.label :revenue %>
+    <%= form.text_field :revenue %>
+
+    <%= form.label :operating_expenses %>
+    <%= form.text_field :operating_expenses %>
+
+    <%= form.label :net_income %>
+    <%= form.text_field :net_income%>
+
+    <%= form.label :years_in_business%>
+    <%= form.text_field :years_in_business %>
+
+    <%= form.label :loan_amount %>
+    <%= form.text_field :loan_amount %>
+<%= form.submit "Submit Application" %>
+<% end %>
+</div>
