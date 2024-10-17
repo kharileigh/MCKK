@@ -18,3 +18,4 @@ users = User.create!([
 ])
 
 p "Created #{User.count} Users"
+

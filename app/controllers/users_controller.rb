@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @current_user = User.find_by_id(session[:user_id])
   end
 
   def new
@@ -9,23 +10,23 @@ class UsersController < ApplicationController
   def create
     def create
       @user = User.new(user_params)
-  
+
       if @user.save
-  
+
         # get user id
         session[:user_id] = @user.id
-  
+
         # get username
         session[:username] = @user.username
-  
+
         redirect_to user_path(@user.id)
-  
       else
         render :new
       end
     end
-  
+
   end
+  
   private
   def user_params
     # permit only -- takes only the parameters
@@ -33,5 +34,4 @@ class UsersController < ApplicationController
     params.permit(:username, :password)
   end
 
-end
 end
