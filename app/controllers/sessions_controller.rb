@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def welcome
-     render "sessions/welcome"
+    render "sessions/welcome"
   end
 
   def homepage
