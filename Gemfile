@@ -60,4 +60,11 @@ gem "rspec-rails", "~> 7.0"
 
 gem "lockbox", "~> 1.4"
 
+gem "bootstrap", "~> 5.3"
+
+gem "sassc-rails", "~> 2.1"
+
+gem "cssbundling-rails", "~> 1.4"
+
 gem "google-authenticator-rails"
+
