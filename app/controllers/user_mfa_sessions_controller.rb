@@ -11,7 +11,7 @@ class UserMfaSessionsController < ApplicationController
 
     if @current_user.google_authentic?(params[:mfa_code]) # Check if 6 digit code matches QR code
       UserMfaSession.create(@current_user) # If matches, create a MFA session 
-      redirect_to user_path # User dashboard
+      redirect_to users_path(@current_user) # User dashboard
     else
       flash.now[:danger] = "Invalid code"
       render :new
