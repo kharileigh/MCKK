@@ -20,18 +20,17 @@ class UsersController < ApplicationController
         session[:username] = @user.username
 
         redirect_to user_path(@user.id)
+        # redirect_to user_path(session[:user_id])
       else
         render :new
       end
     end
-
   end
-  
+
   private
   def user_params
     # permit only -- takes only the parameters
     # require, permit -- takes user object first, then parameters within object -- object not created yet so user is empty
     params.permit(:username, :password)
   end
-
 end
