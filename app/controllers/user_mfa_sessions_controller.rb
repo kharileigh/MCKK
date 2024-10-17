@@ -26,8 +26,8 @@ class UserMfaSessionsController < ApplicationController
   def generate_qr
     @current_user = User.find_by_id(session[:user_id])
     @current_user.set_google_secret
-    if user.MFA_secret.nil?
-      user.generate_mfa_secret! # Assuming this method generates and saves the MFA secret user.save!
+    if @current_user.MFA_secret.nil?
+      @current_user.generate_mfa_secret! # Assuming this method generates and saves the MFA secret user.save!
     end
     @current_user.google_qr_uri
   end
