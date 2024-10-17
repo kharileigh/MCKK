@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_16_093342) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_17_143636) do
+  create_table "loans", force: :cascade do |t|
+    t.string "company_name"
+    t.string "industry"
+    t.text "description"
+    t.integer "revenue"
+    t.integer "operating_expenses"
+    t.integer "net_income"
+    t.integer "years_in_business"
+    t.integer "loan_amount"
+    t.string "loan_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_loans_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
@@ -20,4 +36,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_093342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "loans", "users"
 end
