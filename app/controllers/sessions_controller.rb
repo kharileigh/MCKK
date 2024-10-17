@@ -1,11 +1,13 @@
 class SessionsController < ApplicationController
+
   def index
   end
 
   def new
   end
-
-  def home
+  
+  def welcome
+     render "sessions/welcome"
   end
 
   def homepage
@@ -34,4 +36,5 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     # redirect_to root_path
   end
+
 end

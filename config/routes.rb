@@ -12,11 +12,9 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-
   # Defines the root path route ("/")
 
   # root "posts#index
-
 
   # REGISTRATION
   resources :users, only: [ :new, :create ]
@@ -31,8 +29,8 @@ Rails.application.routes.draw do
 
   # 2FA GOOGLE
   resources :user_mfa_sessions, only: [ :new, :create ]
-  get "/mfa", to: "user_mfa_sessions#new" # show 2FA input form
-  post "mfa", to: "user_mfa_sessions#create" # process 2FA code
+  get "/user_mfa_session", to: "user_mfa_sessions#new" # show 2FA input form
+  post "/user_mfa_session", to: "user_mfa_sessions#create" # process 2FA code
 
   # LOAN
   resources :loans, only: [ :new, :create ]
@@ -41,6 +39,4 @@ Rails.application.routes.draw do
 
   get "/users/:id", to: "users#index"
 
-  get "/user_mfa_session", to: "user_mfa_sessions#new"
-  post "/user_mfa_session", to: "user_mfa_sessions#create"
 end

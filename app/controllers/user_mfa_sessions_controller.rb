@@ -31,4 +31,5 @@ class UserMfaSessionsController < ApplicationController
     end
     @current_user.google_qr_uri
   end
+  
 end
