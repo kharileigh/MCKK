@@ -36,4 +36,5 @@ Rails.application.routes.draw do
   post "/application", to: "loans#create" # processes application submission
 
   get "/users/:id", to: "users#create"
+  
 end
