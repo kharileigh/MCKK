@@ -13,10 +13,10 @@ User.destroy_all
 
 
 users = User.create!([
-    { username: "Kamilya", password: "test123", email: "Kami@soemthing.com", MFA_secret: nil, google_secret: "nil" },
-    { username: "Khari", password: "test123", email: "Khari@soemthing.com", MFA_secret: nil, google_secret: "nil" },
-    { username: "Chiara", password: "test123/", email: "Chiara@soemthing.com", MFA_secret: nil, google_secret: "nil" },
-    { username: "Mauro", password: "test123", email: "Mauro@soemthing.com", MFA_secret: nil, google_secret: "nil" }
+    { username: "Kamilya", password: "test123", email: "Kami@soemthing.com", MFA_secret: nil, google_secret: "nil", password_confirmation: "test123" },
+    { username: "Khari", password: "test123", email: "Khari@soemthing.com", MFA_secret: nil, google_secret: "nil", password_confirmation: "test123" },
+    { username: "Chiara", password: "test123/", email: "Chiara@soemthing.com", MFA_secret: nil, google_secret: "nil", password_confirmation: "test123/" },
+    { username: "Mauro", password: "test123", email: "Mauro@soemthing.com", MFA_secret: nil, google_secret: "nil", password_confirmation: "test123" }
 ])
 
 p "Created #{User.count} Users"
