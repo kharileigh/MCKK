@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def index
     @current_user = User.find_by_id(session[:user_id])
+
+    # get loans associated with user
+    @loans = @current_user.loans
   end
 
   def new
@@ -8,27 +11,26 @@ class UsersController < ApplicationController
   end
 
   def create
-    def create
-      @user = User.new(user_params)
+    @user = User.new(user_params)
 
-      if @user.save
+    if @user.save
 
-        # get user id
-        session[:user_id] = @user.id
+      # get user id
+      session[:user_id] = @user.id
 
-        # get username
-        session[:username] = @user.username
+      # get username
+      session[:username] = @user.username
 
-        # redirect_to user_path(@user.id)
-        flash[:notice] = "User successfully registered!"
-        redirect_to login_path
+      # redirect_to user_path(@user.id)
+      flash[:notice] = "User successfully registered!"
+      redirect_to login_path
 
-        # redirect_to user_path(session[:user_id])
-      else
-        render :new
-      end
+      # redirect_to user_path(session[:user_id])
+    else
+      render :new
     end
   end
+  
 
   private
   def user_params
