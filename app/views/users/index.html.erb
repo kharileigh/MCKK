@@ -1,6 +1,30 @@
 <div class="row">
-    <h1>User dashboard</h1>
-    <p>Loan status</p>
+    <h1><%= @current_user.username %>'s Dashboard</h1>
+
+    <h2>Loans</h2>
+    <% if @loans.any? %>
+    <table>
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Loan Amount</th>
+                <th>Loan Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @loans.each do |loan| %>
+                <tr>
+                    <td><%= loan.company_name %></td>
+                    <td><%= loan.loan_amount %></td>
+                    <td><%= loan.loan_status %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <% else %>
+        <p>No loans found</p>
+    <% end %>
+
 </div>
 
 <hr>
