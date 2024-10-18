@@ -6,4 +6,11 @@
    </div>
    <%= submit_tag 'Log In', class: "btn btn-block btn-lg btn-primary text-uppercase fs-12 fw-600" %>
  <% end %>
+
+  <% if flash.now[:danger] %>
+    <div class="alert alert-danger">
+      <%= flash.now[:danger] %>
+    </div>
+  <% end %>
+
 </div>

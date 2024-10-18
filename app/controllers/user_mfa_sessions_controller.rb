@@ -3,20 +3,20 @@ class UserMfaSessionsController < ApplicationController
   before_action :set_current_user, only: [ :create, :new ]
   def new
     @link = generate_qr
+    # flash.now[:danger] = "Invalid code"
   end
 
   def create
-    # @current_user = User.find_by_id(session[:user_id]) # Get user by id
     @current_user.MFA_secret = params[:mfa_code] # Get MFA code from user in form
     @current_user.save! # Save user
 
     if @current_user.google_authentic?(params[:mfa_code]) # Check if 6 digit code matches QR code
       UserMfaSession.create(@current_user) # If matches, create a MFA session
-      redirect_to users_path(@current_user) # User dashboard
+      redirect_to "/users/#{@current_user.id}" # User dashboard
       # redirect_to "/"
     else
       flash.now[:danger] = "Invalid code"
-      render :new
+      redirect_to user_mfa_session_path
     end
   end
 
@@ -30,11 +30,13 @@ class UserMfaSessionsController < ApplicationController
     end
   end
 
-  def generate_qr
-    # @current_user = User.find_by_id(session[:user_id])
+  def google_secret
+    if @current_user.google_secret.nil?
+      set_google_secret
+    end
+  end
 
-    # not sure if we need to set google secret every time or just once
-    @current_user.set_google_secret # Set Google secret that is then encrypted into QR code
+  def generate_qr
     @link = @current_user.google_qr_uri # Generate QR code URL which holds Google secret
     @current_user.save! # Save user after setting MFA secret
     @link # Ensures this returns the QR code URL

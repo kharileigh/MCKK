@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     if session[:user_id]
       redirect_to user_path(session[:user_id])
     else
-        redirect_to login_path
+      redirect_to login_path
     end
   end
 
@@ -23,12 +23,12 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      # redirect_to user_path(@user.id)
-      redirect_to user_mfa_session_path(@user.id)
+      # redirect_to user_mfa_session_path(@user.id)
+      redirect_to user_mfa_session_path
 
     else
-      message = "Something went wrong"
-      redirect_to login_path, notice: message
+      message = "Something went wrong, Try again"
+      redirect_to login_path, alert: message
     end
   end
 
