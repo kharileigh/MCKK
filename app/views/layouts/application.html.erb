@@ -26,10 +26,18 @@
             <img src="/MCKK_logo.jpg" alt="Logo" width="80" height="74" class="d-inline-block">
           </a>
         </form>
+
+
         <form class="justify-content-end">
-          <button class="btn btn-outline-info me-2" type="button">Apply now</button>
-          <button class="btn btn-sm btn-outline-primary" type="button">Sign in</button>
+            <% if session[:user_id] && (request.path.start_with?('/users/') || (request.path == '/application')) %>
+            
+              <% @current_user = User.find_by(id: session[:user_id]) %>
+              <%= link_to 'Dashboard', "/users/#{@current_user.id}", class: "btn btn-outline-info me-2" %>
+              <%= link_to 'Apply', application_path, class: "btn btn-outline-info me-2" %>
+              <%= link_to 'Sign out', logout_path, method: :delete, class: "btn btn-sm btn-outline-primary" %>
+            <% end %>
         </form>
+
       </div>
     </nav>
 
