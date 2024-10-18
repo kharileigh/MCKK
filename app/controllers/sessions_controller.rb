@@ -20,13 +20,10 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:email])
-    p @user
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to user_mfa_session_path(@user.id)
-      # redirect_to user_mfa_session_path
-      p "successful"
     else
       message = "Something went wrong, Try again"
       redirect_to login_path, alert: message

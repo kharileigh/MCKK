@@ -15,18 +15,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-
-
       # get user id
       session[:user_id] = @user.id
 
       # get username
       session[:username] = @user.username
-
       # redirect_to user_path(@user.id)
-      redirect_to login_path, notice: "User successfully registered!"
-      # flash[:notice] = "User successfully registered!"
-      # redirect_to login_path
+      # redirect_to register_path
+      flash[:notice] = "User successfully registered! you can now log in"
+      redirect_to login_path
 
       # redirect_to user_path(session[:user_id])
     else
@@ -40,6 +37,5 @@ class UsersController < ApplicationController
     # require, permit -- takes user object first, then parameters within object -- object not created yet so user is empty
     # params.permit(:username, :password)
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
-
   end
 end

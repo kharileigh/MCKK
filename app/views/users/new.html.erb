@@ -2,7 +2,7 @@
 <div class="login-container">
 <h1> Register to Funding Circle</h1>
 
-<%= form_with model: @user, url: login_path, local: true do |form| %>
+<%= form_with model: @user, url: register_path, local: true do |form| %>
     <% if @user.errors.any? %>
         <div id="error_explanation">
             <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -19,7 +19,7 @@
         <%= form.label :username %>
         <%= form.text_field :username, required: true %>
     </div>
-    
+
     <div>
         <%= form.label :email %>
         <%= form.text_field :email, required: true %>
@@ -38,6 +38,12 @@
 
     <div>
         <%= form.submit "Register" %>
+    </div>
+<% end %>
+
+<% if flash[:alert] %>
+    <div class="alert alert-danger">
+        <%= flash[:alert] %>
     </div>
 <% end %>
 </div>
