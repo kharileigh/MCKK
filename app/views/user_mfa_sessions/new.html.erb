@@ -12,5 +12,12 @@
   <% else %>
     <p>No QR code available</p>
   <% end %>
+
+  <% if flash.now[:danger] %>
+    <div class="alert alert-danger">
+      <%= flash.now[:danger] %>
+    </div>
+  <% end %>
+
 </div>
 

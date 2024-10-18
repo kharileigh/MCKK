@@ -35,6 +35,10 @@ Rails.application.routes.draw do
   get "/application", to: "loans#new" # shows loan application form
   post "/application", to: "loans#create" # processes application submission
 
-  get "/users/:id", to: "users#create"
-  
+
+
+  # get "/users/:id", to: "users#create"
+  # get "/users/:id", to: "users#show"
+  get "/users/:id", to: "users#index"
+
 end
