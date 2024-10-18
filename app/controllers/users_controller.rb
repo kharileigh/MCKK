@@ -31,6 +31,8 @@ class UsersController < ApplicationController
   def user_params
     # permit only -- takes only the parameters
     # require, permit -- takes user object first, then parameters within object -- object not created yet so user is empty
-    params.permit(:username, :password)
+    # params.permit(:username, :password)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+
   end
 end
