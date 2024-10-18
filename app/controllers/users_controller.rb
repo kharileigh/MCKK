@@ -19,7 +19,10 @@ class UsersController < ApplicationController
         # get username
         session[:username] = @user.username
 
-        redirect_to user_path(@user.id)
+        # redirect_to user_path(@user.id)
+        flash[:notice] = "User successfully registered!"
+        redirect_to login_path
+
         # redirect_to user_path(session[:user_id])
       else
         render :new
