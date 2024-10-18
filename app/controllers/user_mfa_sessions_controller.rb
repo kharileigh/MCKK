@@ -16,7 +16,7 @@ class UserMfaSessionsController < ApplicationController
       redirect_to "/users/#{@current_user.id}" # User dashboard
       # redirect_to "/"
     else
-      flash.now[:danger] = "Invalid code"
+      flash[:danger] = "Invalid code"
       redirect_to user_mfa_session_path
     end
   end
@@ -30,12 +30,6 @@ class UserMfaSessionsController < ApplicationController
       redirect_to login_path, alert: "Log in first"
     end
   end
-
-  # def google_secret
-  #   if @current_user.google_secret.nil?
-  #     set_google_secret
-  #   end
-  # end
 
   def generate_qr
     if @current_user.google_secret.nil?
