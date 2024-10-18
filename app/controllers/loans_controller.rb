@@ -8,11 +8,11 @@ class LoansController < ApplicationController
   def create
  
     @loan = Loan.new(loan_params)  # Create a new loan object with the provided params
-   
+    @current_user = User.find_by_id(session[:user_id])
     @loan.user_id =  session[:user_id]# Associate loan with the currently logged-in user
     p (@loan)
     if @loan.save  # If loan saves successfully
-      redirect_to user_path(@current_user), notice: "Loan application submitted successfully!"  # Redirect to user dashboard
+      redirect_to "/users/#{@current_user.id}", notice: "Loan application submitted successfully!"  # Redirect to user dashboard
     else
       puts @loan.errors.full_messages  
       render :application, status: :unprocessable_entity  # Render the form again with errors if loan creation fails
