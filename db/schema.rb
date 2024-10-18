@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_18_091819) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_18_110633) do
   create_table "loans", force: :cascade do |t|
     t.string "company_name"
     t.string "industry"
@@ -29,7 +29,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_18_091819) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
     t.string "email"
     t.integer "MFA_secret"
     t.string "google_secret"
