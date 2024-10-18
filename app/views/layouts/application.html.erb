@@ -26,10 +26,17 @@
             <img src="/MCKK_logo.jpg" alt="Logo" width="80" height="74" class="d-inline-block">
           </a>
         </form>
+
+       
         <form class="justify-content-end">
-          <button class="btn btn-outline-info me-2" type="button">Apply now</button>
-          <button class="btn btn-sm btn-outline-primary" type="button">Sign in</button>
+          <% if session[:user_id] == true%>
+              <button class="btn btn-outline-info me-2" type="button">Apply now</button>
+              <button class="btn btn-sm btn-outline-primary" type="button">
+              <%= link_to 'Sign out', root_path%>
+              </button>
+          <% end %>
         </form>
+       
       </div>
     </nav>
 
