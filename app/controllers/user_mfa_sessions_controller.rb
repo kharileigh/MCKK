@@ -1,9 +1,10 @@
 class UserMfaSessionsController < ApplicationController
   skip_before_action :check_mfa, only: [ :new, :create ]
   before_action :set_current_user, only: [ :create, :new ]
+
   def new
+    p @current_user
     @link = generate_qr
-    # flash.now[:danger] = "Invalid code"
   end
 
   def create
@@ -30,13 +31,17 @@ class UserMfaSessionsController < ApplicationController
     end
   end
 
-  def google_secret
-    if @current_user.google_secret.nil?
-      set_google_secret
-    end
-  end
+  # def google_secret
+  #   if @current_user.google_secret.nil?
+  #     set_google_secret
+  #   end
+  # end
 
   def generate_qr
+    if @current_user.google_secret.nil?
+      @current_user.set_google_secret
+      @current_user.save!
+    end
     @link = @current_user.google_qr_uri # Generate QR code URL which holds Google secret
     @current_user.save! # Save user after setting MFA secret
     @link # Ensures this returns the QR code URL
