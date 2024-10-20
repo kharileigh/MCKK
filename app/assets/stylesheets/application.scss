@@ -15,3 +15,73 @@
  */
 
 @import "bootstrap";
+
+
+/*--------------- LAYOUTS : application.html.erb ---------------------*/
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/*--------------- SESSIONS : welcome.html.erb ------------------------*/
+#welcome-container {
+    margin: 20px;
+    padding: 20px;
+
+}
+
+#welcome-outer-row-1 {
+    background-image: url(/LOAN_image2.png);
+    height: 100%;
+    width: 100%;
+    flex-basis: 18%;
+    background-size: cover;
+    object-fit: cover;
+}
+
+#welcome-inner-div {
+    background: rgba(0, 128, 255, 0.2);
+    color: #1876f2;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 10px 10px 20px rgba(190, 180, 180, 0.5);
+    margin-bottom: 650px;
+    width: 30%;
+}
+
+#welcome-to-FC {
+    text-shadow: 0px 1px 4px #23430C;
+}
+
+#welcome-outer-row-2 {
+    background: rgba(0, 128, 255, 0.2);
+    color: #1876f2;
+    padding: 30px;
+    box-shadow: 10px 10px 20px rgba(190, 180, 180, 0.5);
+    width: 100%;
+}
+
+
+
+/*--------------- USERS : (register) register.html.erb ---------------*/
+
+
+
+
+/*--------------- SESSIONS : (login) new.html.erb -------------------*/
+
+
+
+
+/*--------------- USER_MFA_SESSIONS : new.html.erb  ----------------*/
+
+
+
+
+/*--------------- USERS : (user dashboard) : create.html.erb --------*/
+
+
+
+
+/*---------------- LOANS : application.html.erb ---------------------*/
