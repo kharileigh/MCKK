@@ -1,49 +1,88 @@
 
-<div class="login-container">
-<h1> Register to Funding Circle</h1>
+<div id="register-container">
 
-<%= form_with model: @user, url: register_path, local: true do |form| %>
-    <% if @user.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-            <ul>
-                <% @user.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-            </ul>
+    <div id="register-outer-row-1" class="row">
+        <div id="register-inner-div">
+            <h1 id="register-to-FC"> Register to Funding Circle</h1>
         </div>
-    <% end %>
-
-
-    <div>
-        <%= form.label :username %>
-        <%= form.text_field :username, required: true %>
-    </div>
-
-    <div>
-        <%= form.label :email %>
-        <%= form.text_field :email, required: true %>
     </div>
 
 
-    <div>
-        <%= form.label :password %>
-        <%= form.password_field :password, required: true %>
-    </div>
+    <div id="register-outer-row-2" class="row">
 
-    <div>
-        <%= form.label :password_confirmation, "Confirm Password" %>
-        <%= form.password_field :password_confirmation, required: true %>
-    </div>
+        <div id="register-col-left" class="col-md-4">
 
-    <div>
-        <%= form.submit "Register" %>
-    </div>
-<% end %>
+            <%= form_with model: @user, url: register_path, local: true do |form| %>
+                <% if @user.errors.any? %>
+                    <div id="error_explanation">
+                        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                        <ul>
+                            <% @user.errors.full_messages.each do |message| %>
+                                <li><%= message %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                <% end %>
 
-<% if flash[:alert] %>
-    <div class="alert alert-danger">
-        <%= flash[:alert] %>
-    </div>
-<% end %>
+                
+                    <div class="row">
+                        <%= form.label :username %>
+                        <%= form.text_field :username, required: true, class: "register-fields" %>
+                    </div>
+                    
+                    <div class="row">
+                        <%= form.label :email %>
+                        <%= form.text_field :email, required: true, class: "register-fields" %>
+                    </div>
+
+
+                    <div class="row">
+                        <%= form.label :password %>
+                        <%= form.password_field :password, required: true, class: "register-fields" %>
+                    </div>
+
+                    <div class="row">
+                        <%= form.label :password_confirmation, "Confirm Password" %>
+                        <%= form.password_field :password_confirmation, required: true, class: "register-fields" %>
+                    </div>
+
+                    <div class="row">
+                        <%= form.submit "Register", id: "register-button", class: "btn btn-lg btn-outline-danger me-2" %>
+                    </div>
+                
+            <% end %>
+
+            <% if flash[:alert] %>
+                <div class="alert alert-danger">
+                    <%= flash[:alert] %>
+                </div>
+            <% end %>
+
+        </div>
+
+        <div id="register-col-right" class="col-md-8">
+        </div>
+
+    </div> 
+
+    
+    <div id="register-outer-row-3" class="row">
+        <div class="col">
+            ✔️ Short & long term finance
+        </div>
+        <div class="col">
+            ✔️ Apply online in 7 minutes
+        </div>
+        <div class="col">
+            ✔️ Get a quick decision
+        </div>
+        <div class="col">
+            ✔️ UK-based support team
+        </div>
+        <div class="col">
+            ✔️ Fixed interest rates
+        </div>
+    </div>   
+
+
 </div>
