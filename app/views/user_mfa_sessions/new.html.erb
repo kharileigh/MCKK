@@ -1,23 +1,40 @@
-<div class="mfa-container">
-  <%= form_tag user_mfa_session_path, method: :post, class: "search-form", role: "search" do %>
-    <div class="form-group">
-      <%= label_tag "Token", 'Google Authenticator code'%>
-      <%= text_field_tag 'mfa_code', params[:mfa_code], class: "form-control form-control-line" %>
-    </div>
-    <%= submit_tag 'Log In', class: "btn btn-block btn-lg btn-primary text-uppercase fs-12 fw-600" %>
-  <% end %>
+<div id="2FA-container">
+  
+  <!------------ 2FA FORM ---------->
+  <div id="2FA-outer-row-1" class="offset-lg-4">
 
-  <% if @link.present? %>
-    <%= image_tag(@link) %>
-  <% else %>
-    <p>No QR code available</p>
-  <% end %>
+    <%= form_tag user_mfa_session_path, method: :post, role: "search" do %>
 
-  <% if flash.now[:danger] %>
-    <div class="alert alert-danger">
-      <%= flash.now[:danger] %>
+      <div class="row form-control form-control-lg w-50 mb-3 mt-5" id="2FA-field">
+        <%= label_tag "Token", 'Google Authenticator Code'%>
+        <%= text_field_tag 'mfa_code', params[:mfa_code] %>
+      </div>
+
+      <div class="row input-group w-50 mb-3" id="2FA-submit">
+        <%= submit_tag 'Log In', class: "btn btn-block btn-lg btn-primary text-uppercase" %>
+      </div>
+      
+    <% end %>
+
+    <!---- QR CODE----->
+    <div class="row justify-content-center w-25 offset-lg-1">
+      <% if @link.present? %>
+        <%= image_tag(@link) %>
+      <% else %>
+        <p>No QR code available</p>
+      <% end %>
     </div>
-  <% end %>
+
+  </div>
+
+  <!-------------- FLASH ------------>
+  <div class="row justify-content-center w-25 offset-lg-1">
+    <% if flash.now[:danger] %>
+      <div class="alert alert-danger">
+        <%= flash.now[:danger] %>
+      </div>
+    <% end %>
+  </div>
 
 </div>
 
