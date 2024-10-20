@@ -1,14 +1,62 @@
 <div class="login-container">
-    <h1>Log In</h1>
-    <%= form_tag '/login' do %>
-        Email:<%= text_field_tag :email%><br>
-        Password:<%= password_field_tag :password%><br>
-        <%= submit_tag "Log In" %>
-    <% end %>
 
-    <% if flash[:alert] %>
-    <div class="alert alert-danger">
-        <%= flash[:alert] %>
+    <div id="login-outer-row-1" class="row">
+        <div id="login-inner-div">
+            <h1 id="login-to-FC">Log In</h1>
+        </div>
     </div>
-    <% end %>
+
+    <div id="login-outer-row-2" class="row">
+
+        <div id="login-col-left" class="col-md-4">
+
+            <%= form_with model: @user, url: login_path, local: true do |form| %>
+
+                <div class="row">
+                    <%= form.label :email %>
+                    <%= form.text_field :email, required: true, class: "login-fields" %>
+                </div>
+
+                <div class="row">
+                    <%= form.label :password %>
+                    <%= form.password_field :password, required: true, class: "login-fields" %>
+                </div>
+
+                <div class="row">
+                <%= form.submit "Log In", id: "login-button", class: "btn btn-lg btn-outline-danger me-2" %>
+                </div>
+
+            <% end %>
+
+            <% if flash[:alert] %>
+            <div class="alert alert-danger">
+                <%= flash[:alert] %>
+            </div>
+            <% end %>
+        
+        </div>
+
+        <div id="login-col-right" class="col-md-8">
+        </div>
+
+    </div>
+
+    <div id="login-outer-row-3" class="row">
+        <div class="col">
+            ✔️ Short & long term finance
+        </div>
+        <div class="col">
+            ✔️ Apply online in 7 minutes
+        </div>
+        <div class="col">
+            ✔️ Get a quick decision
+        </div>
+        <div class="col">
+            ✔️ UK-based support team
+        </div>
+        <div class="col">
+            ✔️ Fixed interest rates
+        </div>
+    </div> 
+
 </div>
