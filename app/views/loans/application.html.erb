@@ -1,32 +1,123 @@
-<div class="row">
-    <h1>Product Application</h1>
-</div>
-<div>
-<%= form_with model: @loan, local: true, html: { multipart: true } do |form| %>
+<div id="application-container">
 
-    <%= form.label :company_name %>
-    <%= form.text_field :company_name %>
+    <!---------- Loan Title --------->
+    <div id="application-outer-row-1" class="row">
+        <div id="application-inner-div">
+            <h1 id="application-to-FC">Product Application</h1>
+        </div> 
+    </div>
 
-    <%= form.label :industry %>
-    <%= form.text_field :industry %>
+    <div id="application-outer-row-2 " class="row justify-content-between">
 
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+        <!----------- Loan Application Form ----------->
+        <div id="application-col-left" class="col-md-2">
 
-    <%= form.label :revenue %>
-    <%= form.text_field :revenue %>
+            <%= form_with model: @loan, local: true, html: { multipart: true } do |form| %>
 
-    <%= form.label :operating_expenses %>
-    <%= form.text_field :operating_expenses %>
+                <!------ Line 1 ---->
+                <div id="application-inner-div-0" class="row justify-content-between">
+                    <div class="col-md-3">
+                        <%= form.label :company_name %>
+                        <%= form.text_field :company_name, id: "company-name-field", required: true, class: "application-fields" %>
+                    </div>
+                </div>
+                <div id="application-inner-div-1" class="row justify-content-between">
+                    <div class="col-md-2">
+                        <%= form.label :industry %>
+                        <%= form.text_field :industry, id: "industry-field", required: true, class: "application-fields" %>
+                    </div>
+                </div>
+                
+                <br>
 
-    <%= form.label :net_income %>
-    <%= form.text_field :net_income%>
+                <!------ Line 2 ----->
+                <div id="application-inner-div-2" class="row justify-content-between">
+                    <div class="col-md-2" role="textbox" aria-multiline="true">
+                        <%= form.label :description %>
+                        <%= form.text_area :description, required: true, id: "description-field", class: "application-fields" %>
+                    </div>
 
-    <%= form.label :years_in_business%>
-    <%= form.text_field :years_in_business %>
+                    <div class="col-md-4">
+                    </div>
+                </div>
 
-    <%= form.label :loan_amount %>
-    <%= form.text_field :loan_amount %>
-<%= form.submit "Submit Application"%>
-<% end %>
+                <br>
+
+                <!------ Line 3 ----->
+                <div id="application-inner-div-3" class="row justify-content-between">
+                    <div class="col-md-2">
+                        <%= form.label :revenue %>
+                        <%= form.text_field :revenue, required: true, class: "application-fields" %>
+                    </div>
+                    <div class="col-md-4">
+                        <%= form.label :operating_expenses %>
+                        <%= form.text_field :operating_expenses, required: true, class: "application-fields" %>
+                    </div>
+                </div>
+
+                <br>
+
+                <!------ Line 4 ----->
+                <div id="application-inner-div-4" class="row justify-content-between">
+                    <div class="col-md-2">
+                        <%= form.label :net_income %>
+                        <%= form.text_field :net_income, required: true, class: "application-fields" %>
+                    </div>
+                    <div class="col-md-4">
+                        <%= form.label :years_in_business%>
+                        <%= form.text_field :years_in_business, required: true, class: "application-fields" %>
+                    </div>
+                </div>
+
+                <br>
+
+                <!------ Line 5 ----->
+                <div id="application-inner-div-5" class="row justify-content-between">
+                    <div class="col-md-2">
+                        <%= form.label :loan_amount %>
+                        <%= form.text_field :loan_amount, required: true, class: "application-fields" %>
+                    </div>
+
+                    <div class="col-md-4">
+                    </div>
+                </div>
+
+                <br>
+
+                <!------ Line 6 ----->
+                <div id="application-inner-div-6" class="row">
+                    <%= form.submit "Submit Application", id: "application-button", class: "btn btn-lg btn-outline-danger me-2" %>
+                </div>
+
+            <% end %>
+
+        </div>
+
+        <div id="application-col-right" class="col-md-4">
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div id="application-outer-row-3" class="row">
+        <div class="col">
+            ✔️ Short & long term finance
+        </div>
+        <div class="col">
+            ✔️ Apply online in 7 minutes
+        </div>
+        <div class="col">
+            ✔️ Get a quick decision
+        </div>
+        <div class="col">
+            ✔️ UK-based support team
+        </div>
+        <div class="col">
+            ✔️ Fixed interest rates
+        </div>
+    </div>
+
+    
+
 </div>

@@ -282,3 +282,106 @@ html {
 }
 
 /*---------------- LOANS : application.html.erb ---------------------*/
+#application-container {
+    margin: 20px;
+    padding: 20px;
+}
+
+/*----- Loan Title */
+#application-outer-row-1 {
+    margin-bottom: 20px;
+    margin-left: 8px;
+
+    justify-content: flex-start;
+    align-content: start;
+    object-fit: cover;
+}
+
+#application-inner-div {
+    background: rgba(0, 128, 255, 0.2);
+    border-radius: 20px;
+    color: #fd1d1dc8;
+    padding: 30px;
+    box-shadow: 10px 10px 20px rgba(190, 180, 180, 0.5);
+    text-align: center;
+    width: 40%;
+}
+
+#application-to-FC {
+    text-shadow: 0px 1px 4px #23430C;
+}
+
+/*----------- Loan Application Form */
+#application-col-left {
+    justify-content: center;
+    align-content: center;
+    object-fit: cover;
+    display: flexbox;
+    
+    /*
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    box-shadow: 5px 5px 10px rgba(125, 39, 162, 0.754);
+    */
+    background: rgb(253,187,45);
+    background: radial-gradient(circle, rgba(253,187,45,1) 0%, rgba(34,193,195,1) 97%);
+    border-radius: 20px;
+    color: black;
+    height: 40%;
+    min-height: 70px;
+    padding: 30px; 
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 35%;
+}
+
+.application-fields {
+    border-radius: 10px;
+    margin-top: -5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+
+}
+
+#company-name-field, #industry-field {
+    width: 400px;
+    margin-top: 2px;
+}
+
+#description-field {
+    width: 400px;
+    min-height: 90px;
+    max-height: 90px;
+    margin-top: 2px;
+    overflow: hidden;
+}
+
+#application-button {
+    margin-top: 25px;
+}
+
+/*--------- Loan Application Image */
+#application-col-right {
+    background-image: url('/LOAN_image6.jpg');
+    height: 45%;
+    min-height: 700px;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    margin-bottom: -45px;
+    margin-right: 90px;
+    
+}
+
+/*--------- FC Banner */
+#application-outer-row-3 {
+    background: rgba(0, 128, 255, 0.2);
+    color: #1876f2;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 9px rgba(12, 27, 243, 0.6);
+    margin-left: 23px;
+    width: 99%;
+}
