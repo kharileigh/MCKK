@@ -25,15 +25,17 @@
       <% end %>
     </div>
 
-  </div>
+  
 
-  <!-------------- FLASH ------------>
-  <div class="row justify-content-center w-25 offset-lg-1">
-    <% if flash.now[:danger] %>
-      <div class="alert alert-danger">
-        <%= flash.now[:danger] %>
-      </div>
-    <% end %>
+    <!-------------- FLASH ------------>
+    <div class="row justify-content-center w-25 offset-lg-1">
+      <% if flash.now[:danger] %>
+        <div class="alert alert-danger">
+          <%= flash.now[:danger] %>
+        </div>
+      <% end %>
+    </div>
+    
   </div>
 
 </div>

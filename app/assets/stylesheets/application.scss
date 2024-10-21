@@ -185,8 +185,100 @@ html {
 
 
 /*--------------- USERS : (user dashboard) : create.html.erb --------*/
+#user-container {
+    justify-content: center;
+    align-items: center;
+}
+
+#user-outer-row-1 {
+    margin-top: 30px;
+    margin-left: 7px;
+}
+
+/*------ Name */
+#user-inner-div-1 {
+    background: rgba(0, 128, 255, 0.2);
+    border-radius: 20px;
+    color: #fd1d1dc8;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+#user-FC {
+    text-shadow: 0px 1px 4px #23430C;
+    margin-bottom: 10px;
+}
+
+/*------- Loans */
+#user-inner-div-2 {
+    margin-top: 40px;
+    margin-left: 7px;
+}
+
+#loans-table {
+    border-width: 40px !important;
+}
 
 
+/*------- Image */
+#loans-col-right {
+    background-image: url(/LOAN_image5.jpeg);
+    height: 25%;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    margin-bottom: -18px;
+    margin-top: -65px;
+}
 
+/*------ Product Cards */
+#user-outer-row-2 {
+    margin-bottom: 25px;
+    margin-top: -25px;
+}
+
+#products-FC {
+    background: rgba(17, 86, 155, 0.842);
+    border-radius: 20px;
+    color: #fdbb2d;
+    padding: 10px;
+    text-align: center;
+    width: 20%;
+    margin-left: 55px;
+}
+
+#user-inner-div-3 {
+    margin-top: 30px;
+    margin-left: 7px;
+    margin-bottom: 30px;
+}
+
+#products-small, #products-large {
+    margin-left: 50px;
+}
+
+#card-body-sm, #card-body-lg {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 97%);
+}
+
+#small-h3, #large-h3 {
+    color: rgba(17, 86, 155, 0.842);
+}
+
+
+/*------- FC Banner */
+#user-outer-row-3 {
+    background: rgba(0, 128, 255, 0.2);
+    color: #1876f2;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 9px rgba(12, 27, 243, 0.6);
+    margin-left: 47px;
+
+    width: 95%;
+}
 
 /*---------------- LOANS : application.html.erb ---------------------*/
