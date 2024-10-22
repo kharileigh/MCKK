@@ -12,10 +12,10 @@ RSpec.describe "User can register", type: :feature do
     click_link "Register"
 
     # New User fills in register form
-    fill_in 'user[username]', with: "Kamilya"
-    fill_in 'user[email]', with: "Kami@soemthing.com"
-    fill_in 'user[password]', with: "test123"
-    fill_in 'user[password_confirmation]', with: "test123"
+    fill_in "user[username]", with: "Kamilya"
+    fill_in "user[email]", with: "Kami@soemthing.com"
+    fill_in "user[password]", with: "test123"
+    fill_in "user[password_confirmation]", with: "test123"
     click_button "Register"
 
     # Create New User
