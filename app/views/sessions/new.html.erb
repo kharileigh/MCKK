@@ -2,7 +2,7 @@
 
     <div id="login-outer-row-1" class="row">
         <div id="login-inner-div">
-            <h1 id="login-to-FC">Log In</h1>
+            <h1 id="login-to-FC">Log In to Funding Circle</h1>
         </div>
     </div>
 
@@ -26,12 +26,16 @@
                 <%= form.submit "Log In", id: "login-button", class: "btn btn-lg btn-outline-danger me-2" %>
                 </div>
 
+                <div class="row">
+                    <%= link_to 'Need to create an account?', register_path, id: "register-redirection", class: "btn btn-lg btn-outline-warning me-2" %>
+                </div>
+
             <% end %>
 
             <% if flash[:alert] %>
-            <div class="alert alert-danger">
-                <%= flash[:alert] %>
-            </div>
+                <div class="alert alert-danger">
+                    <%= flash[:alert] %>
+                </div>
             <% end %>
         
         </div>
