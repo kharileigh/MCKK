@@ -2,8 +2,15 @@ class UsersController < ApplicationController
   def index
     @current_user = User.find_by_id(session[:user_id])
 
-    # get loans associated with user
-    @loans = @current_user.loans
+
+    if @current_user
+      # Get loans associated with the user
+      @loans = @current_user.loans
+    else
+      # Redirect to login if no user is logged in
+      flash[:alert] = "Please log in to view your loans."
+      redirect_to login_path
+    end
   end
 
   def new

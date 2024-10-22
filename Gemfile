@@ -69,3 +69,5 @@ gem "cssbundling-rails", "~> 1.4"
 gem "google-authenticator-rails"
 
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'rails-controller-testing'
