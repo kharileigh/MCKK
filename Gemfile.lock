@@ -144,7 +144,6 @@ GEM
       activesupport (>= 5.0.0)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
-    lockbox (1.4.1)
     logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -379,7 +378,6 @@ DEPENDENCIES
   google-authenticator-rails
   importmap-rails
   jbuilder
-  lockbox (~> 1.4)
   puma (>= 5.0)
   rails (~> 7.2.1)
   rails-controller-testing

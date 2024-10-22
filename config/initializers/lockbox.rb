@@ -1,1 +1,0 @@
-Lockbox.master_key = ENV["2778abe00892cc242f5f7561c56cbbf921e80c91db651a6771cce7894a7518e0"]

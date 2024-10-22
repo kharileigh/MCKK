@@ -1,6 +1,12 @@
 class Loan < ApplicationRecord
     belongs_to :user
 
+    encrypts :revenue, deterministic: true
+    encrypts :operating_expenses, deterministic: true
+    encrypts :net_income, deterministic: true
+    encrypts :years_in_business, deterministic: true
+    encrypts :loan_amount, deterministic: true
+
     validates :company_name, presence: true
     validates :industry, presence: true
     validates :description, presence: true
