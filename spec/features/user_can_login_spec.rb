@@ -5,7 +5,7 @@ require_relative '../spec_helper'
 RSpec.describe "User can log in", type: :feature do
   # Test Database
   before do
-    @user = User.create(email: "Khari@soemthing.com", password: "test123")
+    @user = User.create(username: "Khari", password: "test123", email: "Khari@soemthing.com", MFA_secret: nil, google_secret: nil, password_confirmation: "test123")
   end
 
   scenario "User can login and redirected to 2FA form" do
