@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   root "sessions#welcome"
 
   # REGISTRATION
-  resources :users, only: [ :new, :create ]
+  resources :users, only: [ :new, :create, :index ]
   get "/register", to: "users#new" # show registration form
   post "/register", to: "users#create" # process registration submission
 
