@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
 
     <title><%= content_for(:title) || "Mckk" %></title>
@@ -12,8 +13,8 @@
     <%= yield :head %>
 
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" type="image/png">
+    <link rel="icon" href="/favicon.ico" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -32,7 +33,7 @@
 
         <form class="justify-content-end">
             <% if session[:user_id] && (request.path.start_with?('/users/') || (request.path == '/application')) %>
-            
+
               <% @current_user = User.find_by(id: session[:user_id]) %>
               <%= link_to 'Dashboard', "/users/#{@current_user.id}", class: "btn btn-outline-info me-2" %>
               <%= link_to 'Apply', application_path, class: "btn btn-outline-info me-2" %>
@@ -44,7 +45,7 @@
     </nav>
 
     <%= yield %>
-    
+
     <!-- Add flash message handling here -->
     <% if flash[:notice] %>
       <script>
