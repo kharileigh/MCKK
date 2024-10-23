@@ -16,8 +16,9 @@ RSpec.describe UserMfaSessionsController, type: :controller do
 
     context "when user is logged in" do
         before do
-        session[:user_id] = user.id
-        allow(user).to receive(:google_authentic?).and_return(true) # Mocking the authentication check
+            session[:user_id] = user.id
+            allow(user).to receive(:google_authentic?).and_return(true)
         end
+        # it 'goes to the dashboard'
     end
 end
