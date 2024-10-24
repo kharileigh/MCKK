@@ -27,12 +27,8 @@ class UsersController < ApplicationController
 
       # get username
       session[:username] = @user.username
-      # redirect_to user_path(@user.id)
-      # redirect_to register_path
       flash[:notice] = "User successfully registered! you can now log in"
       redirect_to login_path
-
-      # redirect_to user_path(session[:user_id])
     else
       render :new
     end
