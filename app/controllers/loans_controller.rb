@@ -1,12 +1,12 @@
 class LoansController < ApplicationController
-  # before_action :set_loan, only: [:status]
+
   def new
     @loan =Loan.new
     render :application
   end
 
   def create
- 
+
     @loan = Loan.new(loan_params)  # Create a new loan object with the provided params
     @current_user = User.find_by_id(session[:user_id])
     @loan.user_id =  session[:user_id]# Associate loan with the currently logged-in user
@@ -26,4 +26,3 @@ class LoansController < ApplicationController
 
   end
 end
- 
