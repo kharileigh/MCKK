@@ -56,6 +56,11 @@ group :test do
   gem "selenium-webdriver"
 end
 
+group :test do
+  gem "simplecov", require: false
+  gem "simplecov-console", require: false
+end
+
 gem "rspec-rails", "~> 7.0"
 
 gem "bootstrap", "~> 5.3"
@@ -66,6 +71,6 @@ gem "cssbundling-rails", "~> 1.4"
 
 gem "google-authenticator-rails"
 
-gem 'bcrypt', '~> 3.1.7'
+gem "bcrypt", "~> 3.1.7"
 
-gem 'rails-controller-testing'
+gem "rails-controller-testing"
