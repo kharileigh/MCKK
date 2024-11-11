@@ -61,7 +61,7 @@ group :test do
   gem "simplecov-console", require: false
 end
 
-gem "rspec-rails", "~> 7.0"
+gem "rspec-rails", "~> 7.1"
 
 gem "bootstrap", "~> 5.3"
 
